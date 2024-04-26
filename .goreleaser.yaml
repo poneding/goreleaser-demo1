@@ -28,13 +28,13 @@ archives:
     # this name template makes the OS and Arch compatible with the results of `uname`.
     name_template: >-
       {{ .ProjectName }}_
-      {{ .Tag }}_
-      {{ .Os }}_
-      {{ .Arch }}
+      {{- .Version }}_
+      {{- .Os }}_
+      {{- .Arch }}
     # use zip for windows archives
-    format_overrides:
-      - goos: windows
-        format: zip
+    # format_overrides:
+    #   - goos: windows
+    #     format: binary
 
 changelog:
   sort: asc
